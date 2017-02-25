@@ -15,7 +15,7 @@ class LoginController extends Controller
     //echo "La clave de usuario es: ".$password;
 
     //API Url
-    $url = 'https://echo.getpostman.com/post';
+    $url = env('SZ_URL', 'NO_URL');
 
     //Initiate cURL.
     $ch = curl_init($url);
@@ -23,7 +23,7 @@ class LoginController extends Controller
     //The JSON data.
     $jsonData = array(
         'Vendor' => 'ruckus',
-        'RequestPassword' => 'myPassword',
+        'RequestPassword' =>  env('NBI_PASSWORD', 'NO_PASSWORD'),
         'APIVersion' => '1.0',
         'RequestCategory' => 'UserOnlineControl',
         'RequestType' => 'LoginAsync',
