@@ -21,4 +21,4 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::post("/datoslogin", "LoginController@ObtenerDatos");
+Route::post("/datoslogin", "LoginController@autenticar");
